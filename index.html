@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For My Bugga ❤️</title>
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      background:linear-gradient(to bottom,#ffb3c6,#ffdde1);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      font-family:Arial;
+      color:white;
+      overflow:hidden;
+    }
+    .card{
+      background:rgba(255,255,255,0.25);
+      padding:30px;
+      border-radius:25px;
+      width:85%;
+      max-width:420px;
+      backdrop-filter:blur(6px);
+      z-index:2;
+    }
+    .snow{
+      position:fixed;
+      top:-10px;
+      animation:fall linear infinite;
+      z-index:1;
+    }
+    @keyframes fall{
+      to{transform:translateY(110vh);}
+    }
+  </style>
+</head>
+
+<body onclick="document.getElementById('song').play()">
+
+<div class="card">
+  <h1>Merry Christmas Bugga 🎄❄️</h1>
+  <p>
+    My Bugga (Janvi ❤️),<br><br>
+    Chahe life kitni bhi cold ho,<br>
+    main hamesha tumhara warmth ban ke rahunga.<br><br>
+    I promise — I’ll never leave you 💍
+  </p>
+  <p>💖 Tap anywhere & feel our song 💖</p>
+</div>
+
+<audio id="song" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_8a3d8b0c9f.mp3">
+</audio>
+
+<script>
+setInterval(()=>{
+  const s=document.createElement("div");
+  s.className="snow";
+  s.innerHTML="❄";
+  s.style.left=Math.random()*window.innerWidth+"px";
+  s.style.fontSize=(Math.random()*12+10)+"px";
+  s.style.animationDuration=(Math.random()*3+3)+"s";
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),6000);
+},180);
+</script>
+
+</body>
+</html>
